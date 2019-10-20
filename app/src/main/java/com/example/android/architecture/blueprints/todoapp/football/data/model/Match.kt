@@ -1,6 +1,6 @@
 package com.example.android.architecture.blueprints.todoapp.football.data.model
 
-data class Matche(
+data class Match(
         val date: String,
         val score1: Int,
         val score2: Int,
