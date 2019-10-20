@@ -16,10 +16,14 @@
 
 package com.example.android.architecture.blueprints.todoapp.statistics
 
-import com.example.android.architecture.blueprints.todoapp.data.Task
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.BaseSchedulerProvider
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.ImmediateSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.statistics.StatisticsActionProcessorHolder
+import com.example.android.architecture.blueprints.todoapp.reference.statistics.StatisticsIntent
+import com.example.android.architecture.blueprints.todoapp.reference.statistics.StatisticsViewModel
+import com.example.android.architecture.blueprints.todoapp.reference.statistics.StatisticsViewState
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.BaseSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.ImmediateSchedulerProvider
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.observers.TestObserver
@@ -52,13 +56,13 @@ class StatisticsViewModelTest {
 
     // Get a reference to the class under test
     statisticsViewModel =
-        StatisticsViewModel(StatisticsActionProcessorHolder(tasksRepository, schedulerProvider))
+            StatisticsViewModel(StatisticsActionProcessorHolder(tasksRepository, schedulerProvider))
 
     // We subscribe the tasks to 3, with one active and two completed
     tasks = listOf(
-        Task(title = "Title1", description = "Description1"),
-        Task(title = "Title2", description = "Description2", completed = true),
-        Task(title = "Title3", description = "Description3", completed = true))
+            Task(title = "Title1", description = "Description1"),
+            Task(title = "Title2", description = "Description2", completed = true),
+            Task(title = "Title3", description = "Description3", completed = true))
 
     testObserver = statisticsViewModel.states().test()
   }

@@ -16,12 +16,13 @@
 
 package com.example.android.architecture.blueprints.todoapp.tasks
 
-import com.example.android.architecture.blueprints.todoapp.data.Task
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
-import com.example.android.architecture.blueprints.todoapp.tasks.TasksViewState.UiNotification.TASK_ACTIVATED
-import com.example.android.architecture.blueprints.todoapp.tasks.TasksViewState.UiNotification.TASK_COMPLETE
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.BaseSchedulerProvider
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.ImmediateSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.tasks.*
+import com.example.android.architecture.blueprints.todoapp.reference.tasks.TasksViewState.UiNotification.TASK_ACTIVATED
+import com.example.android.architecture.blueprints.todoapp.reference.tasks.TasksViewState.UiNotification.TASK_COMPLETE
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.BaseSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.ImmediateSchedulerProvider
 import com.nhaarman.mockito_kotlin.any
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -59,9 +60,9 @@ class TasksViewModelTest {
 
     // We subscribe the tasks to 3, with one active and two completed
     tasks = listOf(
-        Task(title = "Title1", description = "Description1", completed = false),
-        Task(title = "Title2", description = "Description2", completed = true),
-        Task(title = "Title3", description = "Description3", completed = true)
+            Task(title = "Title1", description = "Description1", completed = false),
+            Task(title = "Title2", description = "Description2", completed = true),
+            Task(title = "Title3", description = "Description3", completed = true)
     )
 
     testObserver = tasksViewModel.states()

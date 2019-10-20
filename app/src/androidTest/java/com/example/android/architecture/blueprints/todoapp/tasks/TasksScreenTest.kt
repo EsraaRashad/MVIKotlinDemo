@@ -42,9 +42,10 @@ import android.view.View
 import android.widget.ListView
 import com.example.android.architecture.blueprints.todoapp.Injection
 import com.example.android.architecture.blueprints.todoapp.R
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksDataSource
 import com.example.android.architecture.blueprints.todoapp.getCurrentActivity
 import com.example.android.architecture.blueprints.todoapp.getToolbarNavigationContentDescription
+import com.example.android.architecture.blueprints.todoapp.reference.tasks.TasksActivity
 import com.example.android.architecture.blueprints.todoapp.rotateOrientation
 import org.hamcrest.Description
 import org.hamcrest.Matcher

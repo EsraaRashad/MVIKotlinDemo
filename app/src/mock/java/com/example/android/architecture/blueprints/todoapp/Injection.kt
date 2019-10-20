@@ -18,11 +18,11 @@ package com.example.android.architecture.blueprints.todoapp
 
 import android.content.Context
 import com.example.android.architecture.blueprints.todoapp.data.FakeTasksRemoteDataSource
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
-import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksLocalDataSource
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.BaseSchedulerProvider
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.SchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.local.TasksLocalDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.BaseSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.SchedulerProvider
 
 /**
  * Enables injection of mock implementations for

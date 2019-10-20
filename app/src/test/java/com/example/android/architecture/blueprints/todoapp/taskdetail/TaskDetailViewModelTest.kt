@@ -1,16 +1,19 @@
 package com.example.android.architecture.blueprints.todoapp.taskdetail
 
-import com.example.android.architecture.blueprints.todoapp.data.Task
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailIntent.ActivateTaskIntent
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailIntent.CompleteTaskIntent
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailIntent.DeleteTask
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailIntent.InitialIntent
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailViewState.UiNotification.TASK_ACTIVATED
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailViewState.UiNotification.TASK_COMPLETE
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailViewState.UiNotification.TASK_DELETED
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.BaseSchedulerProvider
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.ImmediateSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailActionProcessorHolder
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailIntent.ActivateTaskIntent
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailIntent.CompleteTaskIntent
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailIntent.DeleteTask
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailIntent.InitialIntent
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailViewModel
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailViewState
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailViewState.UiNotification.TASK_ACTIVATED
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailViewState.UiNotification.TASK_COMPLETE
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailViewState.UiNotification.TASK_DELETED
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.BaseSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.ImmediateSchedulerProvider
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.eq
 import io.reactivex.Completable
@@ -47,7 +50,7 @@ class TaskDetailViewModelTest {
 
     // Get a reference to the class under test
     taskDetailViewModel = TaskDetailViewModel(
-        TaskDetailActionProcessorHolder(tasksRepository, schedulerProvider)
+            TaskDetailActionProcessorHolder(tasksRepository, schedulerProvider)
     )
 
     testObserver = taskDetailViewModel.states()
@@ -115,8 +118,8 @@ class TaskDetailViewModelTest {
   @Test
   fun completeTask_marksTaskAsComplete_showsSuccessMessageUi() {
     val task = Task(
-        title = "Complete Requested",
-        description = "For this task"
+            title = "Complete Requested",
+            description = "For this task"
     )
 
     `when`(tasksRepository.completeTask(any<String>())).thenReturn(Completable.complete())
@@ -146,8 +149,8 @@ class TaskDetailViewModelTest {
   @Test
   fun activateTask_marksTaskAsActive_showsSuccessMessageUi() {
     val task = Task(
-        title = "Activate Requested",
-        description = "For this task"
+            title = "Activate Requested",
+            description = "For this task"
     )
 
     `when`(tasksRepository.activateTask(any<String>())).thenReturn(Completable.complete())

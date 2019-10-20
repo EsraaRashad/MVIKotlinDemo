@@ -16,7 +16,9 @@
 
 package com.example.android.architecture.blueprints.todoapp.data.source
 
-import com.example.android.architecture.blueprints.todoapp.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.eq
 import io.reactivex.Single
@@ -250,7 +252,7 @@ class TasksRepositoryTest {
     val newTask2 = Task(title = TASK_TITLE2, description = "Some Task Description")
     tasksRepository.saveTask(newTask2)
     val newTask3 = Task(title = TASK_TITLE3, description = "Some Task Description",
-        completed = true)
+            completed = true)
     tasksRepository.saveTask(newTask3)
 
     // When a completed tasks are cleared to the tasks repository
@@ -275,7 +277,7 @@ class TasksRepositoryTest {
     val newTask2 = Task(title = TASK_TITLE2, description = "Some Task Description")
     tasksRepository.saveTask(newTask2)
     val newTask3 = Task(title = TASK_TITLE3, description = "Some Task Description",
-        completed = true)
+            completed = true)
     tasksRepository.saveTask(newTask3)
 
     // When all tasks are deleted to the tasks repository
@@ -409,7 +411,7 @@ class TasksRepositoryTest {
     private const val TASK_TITLE2 = "title2"
     private const val TASK_TITLE3 = "title3"
     private val TASKS = listOf(
-        Task(title = "Title1", description = "Description1"),
-        Task(title = "Title2", description = "Description2"))
+            Task(title = "Title1", description = "Description1"),
+            Task(title = "Title2", description = "Description2"))
   }
 }

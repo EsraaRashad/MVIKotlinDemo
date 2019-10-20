@@ -30,9 +30,10 @@ import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import com.example.android.architecture.blueprints.todoapp.Injection
 import com.example.android.architecture.blueprints.todoapp.R
-import com.example.android.architecture.blueprints.todoapp.data.Task
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
-import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksLocalDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.local.TasksLocalDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.taskdetail.TaskDetailActivity
 import com.example.android.architecture.blueprints.todoapp.rotateOrientation
 import org.hamcrest.core.IsNot.not
 import org.junit.Rule
@@ -145,15 +146,15 @@ class TaskDetailScreenTest {
      * [Task] stub that is added to the fake service API layer.
      */
     private val ACTIVE_TASK = Task(
-        title = TASK_TITLE,
-        description = TASK_DESCRIPTION,
-        completed = false)
+            title = TASK_TITLE,
+            description = TASK_DESCRIPTION,
+            completed = false)
     /**
      * [Task] stub that is added to the fake service API layer.
      */
     private val COMPLETED_TASK = Task(
-        title = TASK_TITLE,
-        description = TASK_DESCRIPTION,
-        completed = true)
+            title = TASK_TITLE,
+            description = TASK_DESCRIPTION,
+            completed = true)
   }
 }

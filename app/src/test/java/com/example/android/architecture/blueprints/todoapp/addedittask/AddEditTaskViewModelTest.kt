@@ -16,10 +16,14 @@
 
 package com.example.android.architecture.blueprints.todoapp.addedittask
 
-import com.example.android.architecture.blueprints.todoapp.data.Task
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.BaseSchedulerProvider
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.ImmediateSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskActionProcessorHolder
+import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskIntent
+import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskViewModel
+import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskViewState
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.BaseSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.ImmediateSchedulerProvider
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.eq
 import io.reactivex.Completable
@@ -55,7 +59,7 @@ class AddEditTaskViewModelTest {
     schedulerProvider = ImmediateSchedulerProvider()
 
     addEditTaskViewModel = AddEditTaskViewModel(
-        AddEditTaskActionProcessorHolder(tasksRepository, schedulerProvider)
+            AddEditTaskActionProcessorHolder(tasksRepository, schedulerProvider)
     )
     testObserver = addEditTaskViewModel.states().test()
   }

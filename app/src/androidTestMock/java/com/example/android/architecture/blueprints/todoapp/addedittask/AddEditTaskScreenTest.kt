@@ -35,8 +35,10 @@ import android.view.View
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.R.id.toolbar
 import com.example.android.architecture.blueprints.todoapp.data.FakeTasksRemoteDataSource
-import com.example.android.architecture.blueprints.todoapp.data.Task
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksRepository
+import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskActivity
+import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskFragment
 import com.example.android.architecture.blueprints.todoapp.rotateOrientation
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -99,7 +101,7 @@ class AddEditTaskScreenTest {
     // Put a task in the repository and start the activity to edit it
     TasksRepository.clearInstance()
     FakeTasksRemoteDataSource.addTasks(
-        Task(id = TASK_ID, title = "Title1", description = "", completed = false)
+            Task(id = TASK_ID, title = "Title1", description = "", completed = false)
     )
     launchNewTaskActivity(TASK_ID)
 

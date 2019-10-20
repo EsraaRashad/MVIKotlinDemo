@@ -19,11 +19,12 @@ package com.example.android.architecture.blueprints.todoapp.data
 import android.support.test.InstrumentationRegistry
 import android.support.test.filters.LargeTest
 import android.support.test.runner.AndroidJUnit4
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource
-import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksDbHelper
-import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksLocalDataSource
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.BaseSchedulerProvider
-import com.example.android.architecture.blueprints.todoapp.util.schedulers.ImmediateSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.data.Task
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.local.TasksDbHelper
+import com.example.android.architecture.blueprints.todoapp.reference.data.source.local.TasksLocalDataSource
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.BaseSchedulerProvider
+import com.example.android.architecture.blueprints.todoapp.reference.util.schedulers.ImmediateSchedulerProvider
 import io.reactivex.observers.TestObserver
 import org.hamcrest.core.Is.`is`
 import org.hamcrest.core.IsCollectionContaining.hasItems

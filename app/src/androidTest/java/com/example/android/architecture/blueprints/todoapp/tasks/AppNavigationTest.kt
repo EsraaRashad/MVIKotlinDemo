@@ -35,6 +35,7 @@ import android.view.Gravity
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.custom.action.NavigationViewActions.navigateTo
 import com.example.android.architecture.blueprints.todoapp.getToolbarNavigationContentDescription
+import com.example.android.architecture.blueprints.todoapp.reference.tasks.TasksActivity
 import junit.framework.Assert.fail
 import org.junit.Rule
 import org.junit.Test
