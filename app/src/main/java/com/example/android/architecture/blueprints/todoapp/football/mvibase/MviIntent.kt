@@ -1,4 +1,3 @@
 package com.example.android.architecture.blueprints.todoapp.football.mvibase
 
-interface MviIntent {
-}
+interface MviIntent
