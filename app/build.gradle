@@ -120,6 +120,35 @@ dependencies {
     androidTestImplementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
     androidTestImplementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     androidTestImplementation "com.android.support:design:$rootProject.supportLibraryVersion"
+
+    // recyclerView
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+// Glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+//    dagger
+    implementation rootProject.ext.libraries.dagger
+    implementation rootProject.ext.libraries.daggerAndroid
+    implementation rootProject.ext.libraries.daggerAndroidSupport
+    kapt rootProject.ext.apt.daggerCompiler
+    kapt rootProject.ext.apt.daggerProcessor
+
+// retrofit
+    implementation rootProject.ext.libraries.retrofit
+    implementation rootProject.ext.libraries.retrofitGsonConverter
+    implementation rootProject.ext.libraries.retrofitLoggingInterceptor
+    implementation rootProject.ext.libraries.gson
+    implementation rootProject.ext.libraries.okhttp
+    implementation rootProject.ext.libraries.retrofitAdapter
+
+    implementation rootProject.ext.libraries.rxjava
+    implementation rootProject.ext.libraries.rxandroid
+
+
+//    anko
+    implementation rootProject.ext.libraries.anko
 }
 
 /*
