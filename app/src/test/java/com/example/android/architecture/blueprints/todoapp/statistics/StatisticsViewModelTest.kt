@@ -69,7 +69,7 @@ class StatisticsViewModelTest {
 
   @Test
   fun loadEmptyTasksFromRepository_CallViewToDisplay() {
-    // Given an initialized StatisticsViewModelFB with no tasks
+    // Given an initialized ListViewModel with no tasks
     tasks = emptyList()
     setTasksAvailable(tasks)
 
@@ -90,7 +90,7 @@ class StatisticsViewModelTest {
 
   @Test
   fun loadNonEmptyTasksFromRepository_CallViewToDisplay() {
-    // Given an initialized StatisticsViewModelFB with 1 active and 2 completed tasks
+    // Given an initialized ListViewModel with 1 active and 2 completed tasks
     setTasksAvailable(tasks)
 
     // When loading of tasks is initiated by first initial intent

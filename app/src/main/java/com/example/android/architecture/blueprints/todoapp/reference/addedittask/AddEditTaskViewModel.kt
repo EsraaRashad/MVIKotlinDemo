@@ -57,7 +57,7 @@ class AddEditTaskViewModel(
   private val disposables = CompositeDisposable()
 
   /**
-   * take only the first ever InitialIntentFB and all intents of other types
+   * take only the first ever InitialIntent and all intents of other types
    * to avoid reloading data on config changes
    */
   private val intentFilter: ObservableTransformer<AddEditTaskIntent, AddEditTaskIntent>

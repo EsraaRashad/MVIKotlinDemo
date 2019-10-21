@@ -1,10 +1,10 @@
-package com.example.android.architecture.blueprints.todoapp.football.statistics
+package com.example.android.architecture.blueprints.todoapp.football.list
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.android.architecture.blueprints.todoapp.R
 
-class StatisticsActivity : AppCompatActivity() {
+class ListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

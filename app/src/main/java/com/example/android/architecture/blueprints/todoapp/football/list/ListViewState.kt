@@ -1,14 +1,14 @@
-package com.example.android.architecture.blueprints.todoapp.football.statistics
+package com.example.android.architecture.blueprints.todoapp.football.list
 
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewStateFB
 
-class StatisticsViewStateFB(
+data class ListViewState(
         val isLoading: Boolean,
         val error: Throwable?
 ) : MviViewStateFB {
     companion object {
-        fun idle(): StatisticsViewStateFB {
-            return StatisticsViewStateFB(
+        fun idle(): ListViewState {
+            return ListViewState(
                     isLoading = false,
                     error = null
             )

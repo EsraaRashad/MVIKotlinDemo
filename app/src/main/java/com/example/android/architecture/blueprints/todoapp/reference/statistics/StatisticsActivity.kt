@@ -27,7 +27,7 @@ import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.reference.util.addFragmentToActivity
 
 /**
- * Show statistics for tasks.
+ * Show list for tasks.
  */
 class StatisticsActivity : AppCompatActivity() {
   private lateinit var drawerLayout: DrawerLayout

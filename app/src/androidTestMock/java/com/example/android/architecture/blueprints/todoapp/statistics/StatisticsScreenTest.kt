@@ -38,7 +38,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
- * Tests for the statistics screen.
+ * Tests for the list screen.
  */
 @RunWith(AndroidJUnit4::class)
 @LargeTest

@@ -34,7 +34,7 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlin.LazyThreadSafetyMode.NONE
 
 /**
- * Main UI for the statistics screen.
+ * Main UI for the list screen.
  */
 class StatisticsFragment : Fragment(), MviView<StatisticsIntent, StatisticsViewState> {
   private lateinit var statisticsTV: TextView

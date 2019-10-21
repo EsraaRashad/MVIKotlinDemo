@@ -72,7 +72,7 @@ class StatisticsActionProcessorHolder(
   var actionProcessor =
       ObservableTransformer<StatisticsAction, StatisticsResult> { actions ->
         actions.publish { shared ->
-          // Match LoadStatisticsResultFB to loadStatisticsProcessor
+          // Match LoadListResult to loadStatisticsProcessor
           shared.ofType(LoadStatisticsAction::class.java).compose(loadStatisticsProcessor)
               .cast(StatisticsResult::class.java)
               .mergeWith(

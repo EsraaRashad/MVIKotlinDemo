@@ -65,7 +65,7 @@ class AppNavigationTest {
   fun clickOnStatisticsNavigationItem_ShowsStatisticsScreen() {
     openStatisticsScreen()
 
-    // Check that statistics Activity was opened.
+    // Check that list Activity was opened.
     onView(withId(R.id.statistics)).check(matches(isDisplayed()))
   }
 
@@ -118,7 +118,7 @@ class AppNavigationTest {
 
   @Test
   fun backFromTasksScreenAfterStats_ExitsApp() {
-    // This test checks that TasksActivity is a parent of StatisticsActivity
+    // This test checks that TasksActivity is a parent of ListActivity
 
     // Open the stats screen
     openStatisticsScreen()
@@ -161,7 +161,7 @@ class AppNavigationTest {
         // Open Drawer
         .perform(open())
 
-    // Start statistics screen.
+    // Start list screen.
     onView(withId(R.id.nav_view))
         .perform(navigateTo(R.id.statistics_navigation_menu_item))
   }

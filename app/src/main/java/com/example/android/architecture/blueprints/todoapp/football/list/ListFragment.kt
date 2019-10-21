@@ -1,7 +1,6 @@
-package com.example.android.architecture.blueprints.todoapp.football.statistics
+package com.example.android.architecture.blueprints.todoapp.football.list
 
 
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -16,20 +15,20 @@ import io.reactivex.disposables.CompositeDisposable
 /**
  * A simple [Fragment] subclass.
  */
-class StatisticsFragment : Fragment(), MviViewFB<StatisticsIntentFB, StatisticsViewStateFB> {
+class ListFragment : Fragment(), MviViewFB<ListIntent, ListViewState> {
     private lateinit var statisticsTV: TextView
     // Used to manage the data flow lifecycle and avoid memory leak.
     private val disposables: CompositeDisposable = CompositeDisposable()
-//    private val viewModel: StatisticsViewModelFB by lazy(LazyThreadSafetyMode.NONE) {
+//    private val viewModel: ListViewModel by lazy(LazyThreadSafetyMode.NONE) {
 //        ViewModelProviders
 //                .of(this, ToDoViewModelFactory.getInstance(context!!))
-//                .get(StatisticsViewModelFB::class.java)
+//                .get(ListViewModel::class.java)
 //    }
-    override fun intents(): Observable<StatisticsIntentFB> {
+    override fun intents(): Observable<ListIntent> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun render(stateFB: StatisticsViewStateFB) {
+    override fun render(state: ListViewState) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -40,6 +39,6 @@ class StatisticsFragment : Fragment(), MviViewFB<StatisticsIntentFB, StatisticsV
     }
 
     companion object {
-        operator fun invoke(): StatisticsFragment = StatisticsFragment()
+        operator fun invoke(): ListFragment = ListFragment()
     }
 }
