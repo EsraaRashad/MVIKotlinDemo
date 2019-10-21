@@ -19,7 +19,7 @@ This is reflected in their API. For instance, The _View_ has only two exposed me
 interface MviView {
   fun intents(): Observable<MviIntent>
 
-  fun render(state: MviViewState)
+  fun render(stateFB: MviViewState)
 }
 ```
 

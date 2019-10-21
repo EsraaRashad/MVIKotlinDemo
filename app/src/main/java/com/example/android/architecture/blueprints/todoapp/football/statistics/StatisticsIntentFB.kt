@@ -1,7 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.football.statistics
 
-import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviIntent
+import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviIntentFB
 
-sealed class StatisticsIntentFB : MviIntent {
-    object InitialIntent : StatisticsIntentFB()
+sealed class StatisticsIntentFB : MviIntentFB {
+    object InitialIntentFB : StatisticsIntentFB()
 }

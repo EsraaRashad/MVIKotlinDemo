@@ -359,7 +359,7 @@ class TasksFragment : Fragment(), MviView<TasksIntent, TasksViewState> {
 
   private fun showTaskDetailsUi(taskId: String) {
     // in it's own Activity, since it makes more sense that way and it gives us the flexibility
-    // to show some MviIntent stubbing.
+    // to show some MviIntentFB stubbing.
     val intent = Intent(context, TaskDetailActivity::class.java)
     intent.putExtra(TaskDetailActivity.EXTRA_TASK_ID, taskId)
     startActivity(intent)
