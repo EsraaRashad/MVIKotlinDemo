@@ -16,7 +16,7 @@
 
 package com.example.android.architecture.blueprints.todoapp.reference.data.source
 
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 import com.example.android.architecture.blueprints.todoapp.reference.data.Task
 import com.example.android.architecture.blueprints.todoapp.reference.util.SingletonHolderDoubleArg
 import io.reactivex.Completable

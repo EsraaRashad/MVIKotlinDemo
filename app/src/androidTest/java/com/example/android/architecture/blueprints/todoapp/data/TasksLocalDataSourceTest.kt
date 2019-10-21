@@ -16,9 +16,9 @@
 
 package com.example.android.architecture.blueprints.todoapp.data
 
-import android.support.test.InstrumentationRegistry
-import android.support.test.filters.LargeTest
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.filters.LargeTest
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.android.architecture.blueprints.todoapp.reference.data.Task
 import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksDataSource
 import com.example.android.architecture.blueprints.todoapp.reference.data.source.local.TasksDbHelper

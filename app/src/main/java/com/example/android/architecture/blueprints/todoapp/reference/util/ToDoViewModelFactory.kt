@@ -1,7 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.reference.util
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import android.content.Context
 import com.example.android.architecture.blueprints.todoapp.Injection
 import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskActionProcessorHolder

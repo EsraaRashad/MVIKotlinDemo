@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.football.list
+package com.example.android.architecture.blueprints.todoapp.football.list.main
 
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer

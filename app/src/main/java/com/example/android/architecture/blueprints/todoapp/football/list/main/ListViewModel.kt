@@ -1,6 +1,6 @@
-package com.example.android.architecture.blueprints.todoapp.football.list
+package com.example.android.architecture.blueprints.todoapp.football.list.main
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewModelFB
 import com.example.android.architecture.blueprints.todoapp.football.utilfb.notOfType
 import io.reactivex.Observable
@@ -10,7 +10,7 @@ import io.reactivex.functions.BiFunction
 import io.reactivex.subjects.PublishSubject
 
 class ListViewModel(private val actionProcessorHolder: ListActionProcessorHolder)
-    : ViewModel() ,MviViewModelFB<ListIntent , ListViewState>{
+    : ViewModel() ,MviViewModelFB<ListIntent, ListViewState>{
 
     private val intentsSubject: PublishSubject<ListIntent> = PublishSubject.create()
     private val statesObservable: Observable<ListViewState> = compose()

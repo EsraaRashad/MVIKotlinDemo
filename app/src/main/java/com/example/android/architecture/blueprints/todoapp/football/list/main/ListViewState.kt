@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.football.list
+package com.example.android.architecture.blueprints.todoapp.football.list.main
 
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewStateFB
 

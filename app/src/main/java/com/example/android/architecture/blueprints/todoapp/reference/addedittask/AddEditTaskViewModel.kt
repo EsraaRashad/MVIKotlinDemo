@@ -16,7 +16,7 @@
 
 package com.example.android.architecture.blueprints.todoapp.reference.addedittask
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskAction.CreateTaskAction
 import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskAction.PopulateTaskAction
 import com.example.android.architecture.blueprints.todoapp.reference.addedittask.AddEditTaskAction.SkipMe

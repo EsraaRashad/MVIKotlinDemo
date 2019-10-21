@@ -16,7 +16,7 @@
 
 package com.example.android.architecture.blueprints.todoapp.data
 
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 import com.example.android.architecture.blueprints.todoapp.reference.data.Task
 import com.example.android.architecture.blueprints.todoapp.reference.data.source.TasksDataSource
 import io.reactivex.Completable

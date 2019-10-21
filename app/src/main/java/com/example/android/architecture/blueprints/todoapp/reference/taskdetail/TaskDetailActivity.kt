@@ -17,7 +17,7 @@
 package com.example.android.architecture.blueprints.todoapp.reference.taskdetail
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.reference.util.addFragmentToActivity
 

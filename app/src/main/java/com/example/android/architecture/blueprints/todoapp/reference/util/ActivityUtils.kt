@@ -17,8 +17,8 @@
 package com.example.android.architecture.blueprints.todoapp.reference.util
 
 import android.annotation.SuppressLint
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 /**
  * The `fragment` is added to the container view with id `frameId`. The operation is
@@ -26,9 +26,9 @@ import android.support.v4.app.FragmentManager
  */
 @SuppressLint("CommitTransaction")
 fun addFragmentToActivity(
-    fragmentManager: FragmentManager,
-    fragment: Fragment,
-    frameId: Int) {
+        fragmentManager: FragmentManager,
+        fragment: Fragment,
+        frameId: Int) {
   fragmentManager.beginTransaction().run {
     add(frameId, fragment)
     commit()

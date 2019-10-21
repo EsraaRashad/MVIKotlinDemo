@@ -18,10 +18,10 @@ package com.example.android.architecture.blueprints.todoapp.reference.statistics
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.v4.app.NavUtils
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.AppCompatActivity
+import androidx.core.app.NavUtils
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.reference.util.addFragmentToActivity

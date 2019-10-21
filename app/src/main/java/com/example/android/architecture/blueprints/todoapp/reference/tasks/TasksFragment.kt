@@ -17,14 +17,14 @@
 package com.example.android.architecture.blueprints.todoapp.reference.tasks
 
 import android.app.Activity
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.PopupMenu
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
+import androidx.appcompat.widget.PopupMenu
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater

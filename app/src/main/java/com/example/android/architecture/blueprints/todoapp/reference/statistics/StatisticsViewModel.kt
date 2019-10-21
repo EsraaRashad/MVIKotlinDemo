@@ -16,7 +16,7 @@
 
 package com.example.android.architecture.blueprints.todoapp.reference.statistics
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.example.android.architecture.blueprints.todoapp.reference.mvibase.MviAction
 import com.example.android.architecture.blueprints.todoapp.reference.mvibase.MviIntent
 import com.example.android.architecture.blueprints.todoapp.reference.mvibase.MviResult

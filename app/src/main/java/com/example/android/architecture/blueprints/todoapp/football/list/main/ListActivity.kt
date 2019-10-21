@@ -1,6 +1,6 @@
-package com.example.android.architecture.blueprints.todoapp.football.list
+package com.example.android.architecture.blueprints.todoapp.football.list.main
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.android.architecture.blueprints.todoapp.R
 
