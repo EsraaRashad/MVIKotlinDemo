@@ -7,9 +7,10 @@ import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.Single
 import io.reactivex.functions.BiFunction
+import javax.inject.Inject
 
-class ListActionProcessorHolder (private val listRepository: ListRepository
-, private val baseSchedulerProviders: BaseSchedulerProviders){
+class ListActionProcessorHolder @Inject constructor(private val listRepository: ListRepository
+                                                    , private val baseSchedulerProviders: BaseSchedulerProviders){
 
     private val loadStatisticsProcessor =
             ObservableTransformer<ListAction.LoadListAction, ListResult.LoadListResult> { actions ->
