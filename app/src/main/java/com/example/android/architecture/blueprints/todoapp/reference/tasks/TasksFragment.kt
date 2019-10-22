@@ -20,8 +20,6 @@ import android.app.Activity
 import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import androidx.fragment.app.Fragment
 import androidx.core.content.ContextCompat
 import androidx.appcompat.widget.PopupMenu
@@ -157,11 +155,7 @@ class TasksFragment : Fragment(), MviView<TasksIntent, TasksViewState> {
     noTaskAddView = root.findViewById(R.id.noTasksAdd)
     noTaskAddView.setOnClickListener { showAddTask() }
 
-    // Set up floating action button
-    val fab = activity!!.findViewById<FloatingActionButton>(R.id.fab_add_task)
 
-    fab.setImageResource(R.drawable.ic_add)
-    fab.setOnClickListener { showAddTask() }
 
     // Set up progress indicator
     swipeRefreshLayout = root.findViewById(R.id.refresh_layout)
@@ -263,9 +257,9 @@ class TasksFragment : Fragment(), MviView<TasksIntent, TasksViewState> {
   }
 
   private fun showMessage(message: String) {
-    val view = view ?: return
-    Snackbar.make(view, message, Snackbar.LENGTH_LONG)
-        .show()
+//    val view = view ?: return
+//    Snackbar.make(view, message, Snackbar.LENGTH_LONG)
+//        .show()
   }
 
   /**
