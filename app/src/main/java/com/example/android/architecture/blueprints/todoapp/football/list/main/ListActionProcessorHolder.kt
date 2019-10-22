@@ -1,35 +1,32 @@
 package com.example.android.architecture.blueprints.todoapp.football.list.main
 
+import com.example.android.architecture.blueprints.todoapp.football.data.ListRepository
+import com.example.android.architecture.blueprints.todoapp.football.data.model.League
+import com.example.android.architecture.blueprints.todoapp.football.utilfb.schedular.BaseSchedulerProviders
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.Single
 import io.reactivex.functions.BiFunction
 
-class ListActionProcessorHolder {
+class ListActionProcessorHolder (private val listRepository: ListRepository
+, private val baseSchedulerProviders: BaseSchedulerProviders){
 
     private val loadStatisticsProcessor =
             ObservableTransformer<ListAction.LoadListAction, ListResult.LoadListResult> { actions ->
                 actions.flatMap {
-                    tasksRepository.getTasks()
+                    listRepository.getLeague()
                             // Transform one event of a List<Task> to an observable<Task>.
-                            .flatMapIterable()
-                            // Count all active and completed tasks and wrap the result into a Pair.
-                            .publish<ListResult.LoadListResult.Success> { shared ->
-                                Single.zip<Int, Int, ListResult.LoadListResult.Success>(
-                                        shared.filter(Task::active).count().map(Long::toInt),
-                                        shared.filter(Task::completed).count().map(Long::toInt),
-                                        BiFunction { activeCount, completedCount ->
-                                            ListResult.LoadListResult.Success(activeCount, completedCount)
-                                        }
-                                ).toObservable()
+                            .toObservable()
+                            .map {
+                                 league -> ListResult.LoadListResult.Success(league.name)
                             }
                             .cast(ListResult.LoadListResult::class.java)
                             // Wrap any error into an immutable object and pass it down the stream
                             // without crashing.
                             // Because errors are data and hence, should just be part of the stream.
                             .onErrorReturn(ListResult.LoadListResult::Failure)
-                            .subscribeOn(schedulerProvider.io())
-                            .observeOn(schedulerProvider.ui())
+                            .subscribeOn(baseSchedulerProviders.io())
+                            .observeOn(baseSchedulerProviders.ui())
                             // Emit an InFlight event to notify the subscribers (e.g. the UI) we are
                             // doing work and waiting on a response.
                             // We emit it after observing on the UI thread to allow the event to be emitted
