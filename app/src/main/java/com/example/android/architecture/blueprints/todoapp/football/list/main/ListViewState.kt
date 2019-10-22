@@ -4,12 +4,14 @@ import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviV
 
 data class ListViewState(
         val isLoading: Boolean,
+        val name: String,
         val error: Throwable?
 ) : MviViewStateFB {
     companion object {
         fun idle(): ListViewState {
             return ListViewState(
                     isLoading = false,
+                    name = "",
                     error = null
             )
         }
