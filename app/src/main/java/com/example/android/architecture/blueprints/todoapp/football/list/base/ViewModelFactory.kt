@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.football.list.main
+package com.example.android.architecture.blueprints.todoapp.football.list.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

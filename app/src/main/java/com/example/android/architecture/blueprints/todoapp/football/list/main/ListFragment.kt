@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.android.architecture.blueprints.todoapp.R
+import com.example.android.architecture.blueprints.todoapp.football.list.base.BaseFragment
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewFB
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
@@ -15,7 +16,7 @@ import io.reactivex.disposables.CompositeDisposable
 /**
  * A simple [Fragment] subclass.
  */
-class ListFragment : Fragment(), MviViewFB<ListIntent, ListViewState> {
+class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     private lateinit var statisticsTV: TextView
     // Used to manage the data flow lifecycle and avoid memory leak.
     private val disposables: CompositeDisposable = CompositeDisposable()

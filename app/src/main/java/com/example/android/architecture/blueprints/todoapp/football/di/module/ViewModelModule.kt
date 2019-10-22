@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.architecture.blueprints.todoapp.football.di.helper.ViewModelKey
 import com.example.android.architecture.blueprints.todoapp.football.list.main.ListViewModel
-import com.example.android.architecture.blueprints.todoapp.football.list.main.ViewModelFactory
+import com.example.android.architecture.blueprints.todoapp.football.list.base.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
