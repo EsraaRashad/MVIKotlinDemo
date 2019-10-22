@@ -87,7 +87,7 @@ class ListViewModel(private val actionProcessorHolder: ListActionProcessorHolder
                 is ListResult.LoadListResult -> when (result) {
                     is ListResult.LoadListResult.Success ->
                         previousState.copy(
-                                isLoading = false
+                                isLoading = true , name = result.name, rounds = result.rounds , error = null
                         )
                     is ListResult.LoadListResult.Failure -> previousState.copy(isLoading = false, error = result.error)
                     is ListResult.LoadListResult.InFlight -> previousState.copy(isLoading = true)
