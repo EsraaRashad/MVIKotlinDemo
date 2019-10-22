@@ -18,7 +18,7 @@ class ListActionProcessorHolder (private val listRepository: ListRepository
                             // Transform one event of a List<Task> to an observable<Task>.
                             .toObservable()
                             .map {
-                                 league -> ListResult.LoadListResult.Success(league.name)
+                                 league -> ListResult.LoadListResult.Success(league.name , league.rounds)
                             }
                             .cast(ListResult.LoadListResult::class.java)
                             // Wrap any error into an immutable object and pass it down the stream
