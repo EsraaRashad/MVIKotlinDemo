@@ -66,7 +66,7 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
             // handle what will happen if data didn't come
         }
     }
-    
+
     override fun bind() {
         // Subscribe to the ViewModel and call render for every emitted state
         disposables.add(viewModel.states().subscribe(this::render))
