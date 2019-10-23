@@ -65,8 +65,10 @@ class ListViewModel(private val actionProcessorHolder: ListActionProcessorHolder
      * Used to decouple the UI and the business logic to allow easy testings and reusability.
      */
     private fun actionFromIntent(intent: ListIntent): ListAction {
+        //TODO(understand what it is)
         return when (intent) {
-            is ListIntent.InitialIntent -> ListAction.LoadListAction
+            is ListIntent.InitialIntent -> ListAction.LoadListAction(true)
+            is ListIntent.RefreshIntent -> ListAction.LoadListAction(intent.forceUpdate)
         }
     }
 
