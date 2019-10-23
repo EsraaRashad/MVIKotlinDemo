@@ -26,9 +26,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor, apiKeyInterceptor: Interceptor): OkHttpClient {
+    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
-                .addInterceptor(apiKeyInterceptor)
                 .addInterceptor(httpLoggingInterceptor)
                 .connectTimeout(10000, TimeUnit.SECONDS)
                 .writeTimeout(10000, TimeUnit.SECONDS)
