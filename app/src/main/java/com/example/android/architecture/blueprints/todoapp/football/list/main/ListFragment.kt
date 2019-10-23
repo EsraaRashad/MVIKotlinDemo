@@ -1,18 +1,19 @@
 package com.example.android.architecture.blueprints.todoapp.football.list.main
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.football.list.base.BaseFragment
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewFB
 import com.jakewharton.rxbinding2.support.v4.widget.RxSwipeRefreshLayout
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
+import kotlinx.android.synthetic.main.fragment_list.*
 import javax.inject.Inject
 
 /**
@@ -24,19 +25,11 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     @Inject
     lateinit var viewModel: ListViewModel
     private val refreshIntentPublisher = PublishSubject.create<ListIntent.RefreshIntent>()
-    private lateinit var swipeRefreshLayout: ScrollChildSwipeRefreshLayout
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_list, container, false)
-        // TODO("//set up list")
-        swipeRefreshLayout = root.findViewById(R.id.refresh_layout)
-        swipeRefreshLayout.setColorSchemeColors(
-                ContextCompat.getColor(activity!!, R.color.colorPrimary),
-                ContextCompat.getColor(activity!!, R.color.colorAccent),
-                ContextCompat.getColor(activity!!, R.color.colorPrimaryDark)
-        )
         return root
     }
 
@@ -50,7 +43,7 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     }
 
     private fun refreshIntent() :Observable<ListIntent.RefreshIntent>{
-        return RxSwipeRefreshLayout.refreshes(swipeRefreshLayout)
+        return RxSwipeRefreshLayout.refreshes(leagueSwipeLayout)
                 .map { ListIntent.RefreshIntent(false) }
                 .mergeWith(refreshIntentPublisher)
     }
@@ -63,9 +56,17 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     }
 
     override fun render(state: ListViewState) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        leagueSwipeLayout.isRefreshing = state.isLoading
+        if (state.error !=null){
+            //handle error
+            return
+        }
 
+        if (state.name.isEmpty() && state.rounds.isEmpty()){
+            // handle what will happen if data didn't come
+        }
+    }
+    
     override fun bind() {
         // Subscribe to the ViewModel and call render for every emitted state
         disposables.add(viewModel.states().subscribe(this::render))
