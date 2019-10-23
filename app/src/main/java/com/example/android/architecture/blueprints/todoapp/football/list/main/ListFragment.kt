@@ -28,8 +28,7 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_list, container, false)
-        return root
+        return  inflater.inflate(R.layout.fragment_list, container, false)
     }
 
 

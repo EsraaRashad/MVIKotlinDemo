@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.example.android.architecture.blueprints.todoapp.football.di.component.AppComponent
+import com.example.android.architecture.blueprints.todoapp.football.di.component.DaggerAppComponent
 import com.example.android.architecture.blueprints.todoapp.football.list.AppInstance
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
@@ -18,7 +19,6 @@ object AppInjector {
     fun init(appInstance: AppInstance) {
         appComponent = DaggerAppComponent.builder()
                 .application(appInstance)
-                .baseUrl("")
                 .build()
 
         appComponent.inject(appInstance)

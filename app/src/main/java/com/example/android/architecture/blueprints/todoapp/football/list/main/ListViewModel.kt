@@ -90,7 +90,7 @@ class ListViewModel @Inject constructor(private val actionProcessorHolder: ListA
                 is ListResult.LoadListResult -> when (result) {
                     is ListResult.LoadListResult.Success ->
                         previousState.copy(
-                                isLoading = true , name = result.name, rounds = result.rounds , error = null
+                                isLoading = false , name = result.name, rounds = result.rounds , error = null
                         )
                     is ListResult.LoadListResult.Failure -> previousState.copy(isLoading = false, error = result.error)
                     is ListResult.LoadListResult.InFlight -> previousState.copy(isLoading = true)
