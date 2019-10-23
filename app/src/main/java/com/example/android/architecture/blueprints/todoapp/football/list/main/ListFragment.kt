@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProviders
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.football.list.base.BaseFragment
+import com.example.android.architecture.blueprints.todoapp.football.list.base.ViewModelFactory
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewFB
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
@@ -20,11 +22,11 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     private lateinit var statisticsTV: TextView
     // Used to manage the data flow lifecycle and avoid memory leak.
     private val disposables: CompositeDisposable = CompositeDisposable()
-//    private val viewModel: ListViewModel by lazy(LazyThreadSafetyMode.NONE) {
-//        ViewModelProviders
-//                .of(this, ToDoViewModelFactory.getInstance(context!!))
-//                .get(ListViewModel::class.java)
-//    }
+    private val viewModel: ListViewModel by lazy(LazyThreadSafetyMode.NONE) {
+        ViewModelProviders
+                .of(this, ViewModelFactory.getInstance(context!!))
+                .get(ListViewModel::class.java)
+    }
     override fun intents(): Observable<ListIntent> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
