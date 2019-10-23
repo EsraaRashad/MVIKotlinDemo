@@ -1,0 +1,12 @@
+<com.example.android.architecture.blueprints.todoapp.football.list.main.ScrollChildSwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</com.example.android.architecture.blueprints.todoapp.football.list.main.ScrollChildSwipeRefreshLayout>
