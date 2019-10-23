@@ -6,9 +6,10 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module(includes = [ViewModelModule::class, RepositoryModule::class, NetworkModule::class])
+@Module
 class AppModule {
     @Provides
     @Singleton
-    fun providesImmediateSchedulerProvider(schedulerProvider: ImmediateSchedulerProvider):BaseSchedulerProviders =schedulerProvider
+    fun providesImmediateSchedulerProvider(schedulerProvider: ImmediateSchedulerProvider):BaseSchedulerProviders
+            =schedulerProvider
 }

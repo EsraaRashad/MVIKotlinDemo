@@ -1,16 +1,13 @@
 package com.example.android.architecture.blueprints.todoapp.football.list.main
 
 import com.example.android.architecture.blueprints.todoapp.football.data.ListRepository
-import com.example.android.architecture.blueprints.todoapp.football.data.model.League
-import com.example.android.architecture.blueprints.todoapp.football.utilfb.schedular.BaseSchedulerProviders
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
-import io.reactivex.Single
-import io.reactivex.functions.BiFunction
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class ListActionProcessorHolder @Inject constructor(private val listRepository: ListRepository
-                                                    , private val baseSchedulerProviders: BaseSchedulerProviders){
+class ListActionProcessorHolder @Inject constructor(private val listRepository: ListRepository) {
 
     private val loadStatisticsProcessor =
             ObservableTransformer<ListAction.LoadListAction, ListResult.LoadListResult> { actions ->
@@ -18,16 +15,16 @@ class ListActionProcessorHolder @Inject constructor(private val listRepository: 
                     listRepository.getLeague()
                             // Transform one event of a List<Task> to an observable<Task>.
                             .toObservable()
-                            .map {
-                                 league -> ListResult.LoadListResult.Success(league.name , league.rounds)
+                            .map { league ->
+                                ListResult.LoadListResult.Success(league.name, league.rounds)
                             }
                             .cast(ListResult.LoadListResult::class.java)
                             // Wrap any error into an immutable object and pass it down the stream
                             // without crashing.
                             // Because errors are data and hence, should just be part of the stream.
                             .onErrorReturn(ListResult.LoadListResult::Failure)
-                            .subscribeOn(baseSchedulerProviders.io())
-                            .observeOn(baseSchedulerProviders.ui())
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
                             // Emit an InFlight event to notify the subscribers (e.g. the UI) we are
                             // doing work and waiting on a response.
                             // We emit it after observing on the UI thread to allow the event to be emitted

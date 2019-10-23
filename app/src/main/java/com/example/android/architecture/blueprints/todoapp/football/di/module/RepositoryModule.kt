@@ -9,6 +9,5 @@ import javax.inject.Singleton
 @Module
 abstract class RepositoryModule {
     @Binds
-    @Singleton
     abstract fun bindListRepository(listRepository: ListRepository) : BaseRepository
 }

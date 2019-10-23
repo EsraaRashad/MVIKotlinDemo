@@ -19,6 +19,7 @@ object AppInjector {
     fun init(appInstance: AppInstance) {
         appComponent = DaggerAppComponent.builder()
                 .application(appInstance)
+                .context(appInstance.baseContext)
                 .build()
 
         appComponent.inject(appInstance)

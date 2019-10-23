@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.football.list.base.BaseFragment
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewFB
@@ -23,6 +24,7 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     // Used to manage the data flow lifecycle and avoid memory leak.
     @Inject
     lateinit var viewModel: ListViewModel
+
     private val refreshIntentPublisher = PublishSubject.create<ListIntent.RefreshIntent>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +33,11 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
         return  inflater.inflate(R.layout.fragment_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        viewModel = ViewModelProviders.of(this,viewModelFactory).get(ListViewModel::class.java)
+
+    }
 
     override fun intents(): Observable<ListIntent> {
         return Observable.merge(initialIntent(),refreshIntent())

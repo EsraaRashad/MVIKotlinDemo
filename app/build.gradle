@@ -32,7 +32,7 @@ android {
             // Uses new built-in shrinker http://tools.android.com/tech-docs/new-build-system/built-in-shrinker
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField 'String', 'SERVER_URL', '"https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json"'
+            buildConfigField 'String', 'SERVER_URL', '"https://raw.githubusercontent.com/"'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
         }
 
@@ -40,7 +40,7 @@ android {
             minifyEnabled true
             useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField 'String', 'SERVER_URL', '"https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json"'
+            buildConfigField 'String', 'SERVER_URL', '"https://raw.githubusercontent.com/"'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
         }
 

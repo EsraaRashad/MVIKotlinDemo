@@ -2,6 +2,7 @@ package com.example.android.architecture.blueprints.todoapp.football.list
 
 import android.app.Activity
 import android.app.Application
+import com.example.android.architecture.blueprints.todoapp.football.di.helper.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -17,4 +18,9 @@ class AppInstance : Application() , HasActivityInjector , HasSupportFragmentInje
     override fun activityInjector(): AndroidInjector<Activity> = activityInjector
 
     override fun supportFragmentInjector(): AndroidInjector<androidx.fragment.app.Fragment> = fragmentInjector
+
+    override fun onCreate() {
+        super.onCreate()
+        AppInjector.init(this)
+    }
 }
