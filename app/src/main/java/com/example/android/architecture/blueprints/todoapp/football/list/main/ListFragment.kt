@@ -14,6 +14,7 @@ import com.example.android.architecture.blueprints.todoapp.football.list.base.Vi
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewFB
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
+import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass.
@@ -22,11 +23,8 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     private lateinit var statisticsTV: TextView
     // Used to manage the data flow lifecycle and avoid memory leak.
     private val disposables: CompositeDisposable = CompositeDisposable()
-    private val viewModel: ListViewModel by lazy(LazyThreadSafetyMode.NONE) {
-        ViewModelProviders
-                .of(this, ViewModelFactory.getInstance(context!!))
-                .get(ListViewModel::class.java)
-    }
+    @Inject
+    private val viewModel: ListViewModel()
     override fun intents(): Observable<ListIntent> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

@@ -8,8 +8,9 @@ import io.reactivex.ObservableTransformer
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.BiFunction
 import io.reactivex.subjects.PublishSubject
+import javax.inject.Inject
 
-class ListViewModel(private val actionProcessorHolder: ListActionProcessorHolder)
+class ListViewModel @Inject constructor(private val actionProcessorHolder: ListActionProcessorHolder)
     : ViewModel() ,MviViewModelFB<ListIntent, ListViewState>{
 
     private val intentsSubject: PublishSubject<ListIntent> = PublishSubject.create()
