@@ -4,4 +4,5 @@ import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviI
 
 sealed class ListIntent : MviIntentFB {
     object InitialIntent : ListIntent()
+    data class RefreshIntent(val forceUpdate: Boolean) : ListIntent()
 }
