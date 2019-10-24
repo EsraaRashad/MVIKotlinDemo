@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.architecture.blueprints.todoapp.R
 import com.example.android.architecture.blueprints.todoapp.football.data.model.Round
@@ -27,19 +26,12 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     @Inject
     lateinit var viewModel: ListViewModel
     private val mAdapter = LeagueAdapter()
-    var roundsList : ArrayList<Round> = ArrayList()
-
     private val refreshIntentPublisher = PublishSubject.create<ListIntent.RefreshIntent>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return  inflater.inflate(R.layout.fragment_list, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-//        viewModel = ViewModelProviders.of(this,viewModelFactory).get(ListViewModel::class.java)
     }
 
     override fun intents(): Observable<ListIntent> {
