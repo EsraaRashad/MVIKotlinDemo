@@ -1,5 +1,6 @@
 package com.example.android.architecture.blueprints.todoapp.football.list.main
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewModelFB
 import com.example.android.architecture.blueprints.todoapp.football.utilfb.notOfType
@@ -92,6 +93,7 @@ class ListViewModel @Inject constructor(private val actionProcessorHolder: ListA
                         previousState.copy(
                                 isLoading = false , name = result.name, rounds = result.rounds , error = null
                         )
+
                     is ListResult.LoadListResult.Failure -> previousState.copy(isLoading = false, error = result.error)
                     is ListResult.LoadListResult.InFlight -> previousState.copy(isLoading = true)
                 }

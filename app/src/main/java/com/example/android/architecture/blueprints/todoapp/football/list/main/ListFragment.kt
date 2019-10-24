@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.architecture.blueprints.todoapp.R
+import com.example.android.architecture.blueprints.todoapp.football.data.model.Round
 import com.example.android.architecture.blueprints.todoapp.football.list.base.BaseFragment
 import com.example.android.architecture.blueprints.todoapp.football.mvibase.MviViewFB
 import com.jakewharton.rxbinding2.support.v4.widget.RxSwipeRefreshLayout
@@ -24,6 +26,8 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     // Used to manage the data flow lifecycle and avoid memory leak.
     @Inject
     lateinit var viewModel: ListViewModel
+    private val mAdapter = LeagueAdapter()
+    var roundsList : ArrayList<Round> = ArrayList()
 
     private val refreshIntentPublisher = PublishSubject.create<ListIntent.RefreshIntent>()
 
@@ -36,7 +40,6 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        viewModel = ViewModelProviders.of(this,viewModelFactory).get(ListViewModel::class.java)
-
     }
 
     override fun intents(): Observable<ListIntent> {
@@ -62,6 +65,9 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
 
     override fun render(state: ListViewState) {
         leagueSwipeLayout.isRefreshing = state.isLoading
+        if (!state.isLoading){
+            initializeUI(state.rounds)
+        }
         if (state.error !=null){
             //handle error
             return
@@ -76,6 +82,14 @@ class ListFragment : BaseFragment(), MviViewFB<ListIntent, ListViewState> {
         // Subscribe to the ViewModel and call render for every emitted state
         disposables.add(viewModel.states().subscribe(this::render))
         viewModel.processIntents(intents())
+    }
+
+    private fun initializeUI(list: java.util.ArrayList<Round>){
+        leagueRecyclerView.adapter = mAdapter
+        mAdapter.addRoundsList(list)
+        leagueRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        leagueRecyclerView.setHasFixedSize(true)
+        leagueRecyclerView.setItemViewCacheSize(20)
     }
 
     companion object {
